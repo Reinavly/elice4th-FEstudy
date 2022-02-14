@@ -1,5 +1,5 @@
 
-이벤트 위임을 알기 위해선 선수지식으로 이벤트 버블링과 캡쳐링의 동작 방식을 알아야 한다.
+> 이벤트 위임을 알기 위해선 선수지식으로 이벤트 버블링과 캡쳐링의 동작 방식을 알아야 한다.
 
 ## 이벤트 버블링 (Event Bubbling) 
 
@@ -56,12 +56,13 @@ li 클릭
 이 때 유의할 점은, 이벤트 캡쳐를 적용한 경우 적용된 엘리먼트부터 콘솔에 찍히고, 적용하지 않은 요소들이 있을 경우 그다음부터는 다시 "이벤트 버블링" 방식을 동작한다는 점이다.
 `li` 부터는 다시 "이벤트 버블링" 이 동작해서 `div` 에 이벤트가 발생하는 것이다.
 
-```javascipt
+```javascript
 document.querySelector('li').addEventListener('click', () => console.log('li 클릭'));
 document.querySelector('ul').addEventListener('click', () => console.log('ul 클릭'),
 { capture: true });
 document.querySelector('div').addEventListener('click', () => console.log('div 클릭'));
 ```
+
 ```
 ul 클릭
 li 클릭
@@ -83,7 +84,7 @@ div 클릭
 
 예시를 살펴보자.
 
-```javascipt
+```javascript
 var ulist = document.querySelector('ul');
 ulist.addEventListener('click', function(event) {
     alert(event.type + '!');    
@@ -91,11 +92,13 @@ ulist.addEventListener('click', function(event) {
 ```
 
 li태그의 상위 요소인 ul 태그를 ulist로 정의하고, ulist에 이벤트 리스너를 달아 하위에서 발생한 클릭 이벤트를 감지한다. (=이벤트 버블링 방식)
+
 무조건 이벤트 위임이 좋은 것은 아니기 때문에 상황에 맞게 잘 사용하도록 하자.
 
 <br>
 
 ## 참고
 https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/
+
 https://github.com/baeharam/Must-Know-About-Frontend/blob/main/Notes/javascript/event-delegation.md
 
