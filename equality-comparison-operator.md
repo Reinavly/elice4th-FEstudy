@@ -111,3 +111,9 @@ Object.is(NaN, NaN); // true
 ```
 
 **부동등 비교 연산자와 불일치 비교 연산자는 각각 동등 비교 연산자와 일치 비교 연산자의 반대 개념이라 이해하면 된다.**
+
+## 참고
+모던 자바스크립트 딥 다이브 7강,
+
+https://github.com/baeharam/Must-Know-About-Frontend/blob/main/Notes/javascript/identity-equal.md
+
